@@ -66,8 +66,9 @@ Run:
 python src/feature_extraction/extract_animal_features.py
 ```
 Output:
+```bash
 data/animal_features_extracted.csv
-
+```
 Features include:
 EFR
 ESI
