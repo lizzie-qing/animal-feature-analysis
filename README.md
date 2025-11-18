@@ -33,7 +33,7 @@ A reproducible pipeline suitable for scientific analysis
 ---
 
 ## Project Structure
-
+```
 animal-feature-analysis/
 ├── README.md
 ├── data/
@@ -57,8 +57,7 @@ animal-feature-analysis/
 │   └── training/
 │       └── train_yolov8_noflip.py
 └── test_images/
-
----
+```
 
 ## 1. Feature Extraction
 
