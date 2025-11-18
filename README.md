@@ -76,36 +76,43 @@ fWHR
 Eye symmetry difference
 Ear uprightness (left, right, avg)
 
-2. Visualization
+## 2. Visualization
 
 KDE Distribution:
+```bash
 python src/visualization/plot_feature_distributions.py
-
+```
 fWHR Histogram:
+```bash
 python src/visualization/plot_fWHR_histogram.py
-
+```
 YOLO Training Curves:
+```bash
 python src/visualization/plot_training_log.py
+```
 
-3. Batch Inference
+## 3. Batch Inference
+```bash
 python src/inference/batch_inference.py
-
+```
 Outputs annotated images in:
+```bash
 results/batch_inference_output/
+```
 
-4. YOLOv8 Training
+## 4. YOLOv8 Training
 
 Left-right flip disabled to avoid confusing asymmetric landmarks.
-
+```bash
 python src/training/train_yolov8_noflip.py
-
+```
 Outputs saved under:
-
+```bash
 runs/detect_yolov8s_noflip/
-
+```
 
 ---
-Skills Demonstrated
+## Skills Demonstrated
 
 **Python** (NumPy, pandas, matplotlib, seaborn)
 
