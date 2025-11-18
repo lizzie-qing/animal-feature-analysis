@@ -239,5 +239,4 @@ Suitable for research, portfolio, and scientific analysis
 ---
 Author
 
-Lizzie Qing
-
+Lizzie 
