@@ -64,7 +64,7 @@ animal-feature-analysis/
 Run:
 ```bash
 python src/feature_extraction/extract_animal_features.py
-
+```
 Output:
 data/animal_features_extracted.csv
 
