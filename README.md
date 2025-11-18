@@ -92,8 +92,6 @@ animal-feature-analysis/
 ## Example Outputs
 ## 1. YOLOv8 Detection Result
 
-(You can replace the image file below with one from results/batch_inference_output)
-
 <p align="center"> <img src="results/batch_inference_output/cat4.jpg" width="55%"> </p>
 
 ## 2. Feature Distribution Visualization (KDE)
