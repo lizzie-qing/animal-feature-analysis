@@ -1,34 +1,61 @@
 #  Animal Facial Feature Analysis  
-### **A Complete AI Pipeline: YOLOv8 Training · Batch Inference · Geometric Feature Extraction · Statistical Visualization**  
+### **YOLOv8 · Feature Engineering · Statistical Visualization**  
+A Complete AI Pipeline for Multispecies Facial Structure Analysis
 *(Author: Lizzie — Data Science & Multimodal Perception)*
 
 ---
+<div align="center">
+
+End-to-End AI Pipeline
+—from detection → feature extraction → statistical analysis → visualization
+
+</div>
 
 ##  Overview  
 
-This repository demonstrates an end-to-end AI pipeline integrating YOLOv8 detection, geometric facial feature engineering,
-and scientific visualization for analyzing structural patterns in animal faces.
-This project implements a **full end-to-end AI pipeline** for analyzing animal facial features.  
-The workflow combines:
+This project demonstrates a fully reproducible AI pipeline integrating:
 
-###  Computer Vision Engineering
-- Custom YOLOv8 training for animal facial landmarks  
-- Left-right flip disabled to preserve asymmetry of eyes/ears  
-- Batch inference with confidence filtering
+### Computer Vision Engineering
 
-###  Data Science & Feature Engineering
-- Extraction of geometric features:
-  - EFR (Eye-to-Face Ratio)  
-  - ESI (Eye Shape Index)  
-  - Eye Symmetry Difference (%)  
-  - fWHR (Facial Width-to-Height Ratio)  
-  - Ear Uprightness (Left / Right / Average)
-- KDE plots, histograms, mean–σ visualization  
-- Multi-species comparison (cat/dog/fox/hamster)
+YOLOv8 training for animal facial landmark detection
 
-### Multimodal Research Workflow
-A reproducible pipeline suitable for scientific analysis  
-(e.g., comparing structural features across animals).
+Left–right flip disabled to preserve facial asymmetry
+
+Batch inference on multiple species (cat / dog / fox / bear / hamster)
+
+###  Geometric Feature Engineering
+Extracted features include:
+
+EFR — Eye-to-Face Ratio
+
+ESI — Eye Shape Index
+
+fWHR — Facial Width-to-Height Ratio
+
+Eye Symmetry Difference (%)
+
+Ear Uprightness (left/right/avg)
+
+### Statistical Visualization
+
+KDE plots
+
+Histograms
+
+Multi-species distribution comparison
+
+Training curves & confusion matrix visualization
+
+### Research-Oriented Workflow
+The pipeline is designed with scientific reproducibility in mind, suitable for:
+
+cross-species structural analysis
+
+perceptual studies
+
+dataset exploration
+
+morphological comparison
 
 ---
 
@@ -37,48 +64,72 @@ A reproducible pipeline suitable for scientific analysis
 animal-feature-analysis/
 ├── README.md
 ├── data/
-│   └── animal_features_extracted.csv
+│   └── animal_features_extracted_sample.csv
 ├── results/
-│   ├── fWHR_histogram.png
-│   ├── training_plots/
-│   │   ├── loss_curves.png
-│   │   └── mAP_curves.png
-│   └── feature_distribution_plots/
+│   ├── batch_inference_output/      # YOLO annotated outputs
+│   └── feature_distribution_plots/  # KDE & histogram visualizations
+│   └── training_plots/              # YOLO training curves & confusion matrix
+│
 ├── src/
 │   ├── feature_extraction/
 │   │   ├── extract_animal_features.py
 │   │   └── create_data_yaml.py
+│   │
 │   ├── visualization/
 │   │   ├── plot_feature_distributions.py
 │   │   ├── plot_fWHR_histogram.py
 │   │   └── plot_training_log.py
+│   │
 │   ├── inference/
 │   │   └── batch_inference.py
+│   │
 │   └── training/
 │       └── train_yolov8_noflip.py
-└── test_images/
+│   
+└── test_images/                     # Sample inputs for inference
 ```
 
-## 1. Feature Extraction
+## Example Outputs
+## 1. YOLOv8 Detection Result
 
-Run:
+(You can replace the image file below with one from results/batch_inference_output)
+
+<p align="center"> <img src="results/batch_inference_output/cat4.jpg" width="55%"> </p>
+
+## 2. Feature Distribution Visualization (KDE)
+<p align="center"> <img src="results/feature_distribution_plots/EFR_advanced_distribution.png" width="65%"> </p>
+
+## 3.YOLOv8 Training Curves
+<p align="center"> <img src="results/training_plots/loss_curve.png" width="60%"> </p>
+
+## How to Use
+## 1. Run YOLOv8 Training
+(Left-right flip disabled to avoid corrupting asymmetric facial landmarks)
+```bash
+python src/training/train_yolov8_noflip.py
+```
+
+## 2. Batch Inference on Sample Images
+```bash
+python src/inference/batch_inference.py
+```
+Outputs saved to:
+```bash
+results/batch_inference_output/
+```
+
+## 3. Extract Geometric Facial Features
+
 ```bash
 python src/feature_extraction/extract_animal_features.py
 ```
 Output:
 ```bash
-data/animal_features_extracted.csv
+data/animal_features_extracted_sample.csv
 ```
-Features include:
-EFR
-ESI
-fWHR
-Eye symmetry difference
-Ear uprightness (left, right, avg)
 
-## 2. Visualization
-
-KDE Distribution:
+## 4. Visualize Feature Distributions
+KDE + Per-species distributions:
 ```bash
 python src/visualization/plot_feature_distributions.py
 ```
@@ -86,18 +137,9 @@ fWHR Histogram:
 ```bash
 python src/visualization/plot_fWHR_histogram.py
 ```
-YOLO Training Curves:
+Training Curves:
 ```bash
 python src/visualization/plot_training_log.py
-```
-
-## 3. Batch Inference
-```bash
-python src/inference/batch_inference.py
-```
-Outputs annotated images in:
-```bash
-results/batch_inference_output/
 ```
 
 ## 4. YOLOv8 Training
@@ -112,19 +154,41 @@ runs/detect_yolov8s_noflip/
 ```
 
 ---
-## Skills Demonstrated
+## Technologies Used
 
-**Python** (NumPy, pandas, matplotlib, seaborn)
+**Programming**
 
-**Computer Vision** (YOLOv8 training & inference)
+Python
 
-**Data Engineering & Feature Extraction**
+NumPy / pandas
 
-**Statistical Visualization**
+Matplotlib / seaborn
 
-**End-to-end AI Pipeline Design**
+**Computer Vision**
 
-**Research Documentation & Reproducibility**
+YOLOv8 — training & batch inference
+
+Custom augmentation constraints
+
+Bounding box + landmark-based geometric processing
+
+**Data Science**
+
+Feature engineering
+
+Data normalization
+
+Multi-species comparison
+
+Scientific visualization
+
+**Pipeline Design**
+
+Modular directory structure
+
+Fully reproducible workflow
+
+Suitable for research & portfolio showcasing
 
 Model weights not included due to size. 
 You can download YOLOv8n/s from Ultralytics or train with train_yolov8_noflip.py.
