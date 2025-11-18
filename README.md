@@ -35,34 +35,27 @@ A reproducible pipeline suitable for scientific analysis
 ## Project Structure
 
 animal-feature-analysis/
-│
 ├── README.md
 ├── data/
 │   └── animal_features_extracted.csv
-│
 ├── results/
 │   ├── fWHR_histogram.png
 │   ├── training_plots/
 │   │   ├── loss_curves.png
 │   │   └── mAP_curves.png
 │   └── feature_distribution_plots/
-│
 ├── src/
 │   ├── feature_extraction/
 │   │   ├── extract_animal_features.py
 │   │   └── create_data_yaml.py
-│   │
 │   ├── visualization/
 │   │   ├── plot_feature_distributions.py
 │   │   ├── plot_fWHR_histogram.py
 │   │   └── plot_training_log.py
-│   │
 │   ├── inference/
 │   │   └── batch_inference.py
-│   │
 │   └── training/
 │       └── train_yolov8_noflip.py
-│
 └── test_images/
 
 ---
