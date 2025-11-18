@@ -126,6 +126,10 @@ runs/detect_yolov8s_noflip/
 
 **Research Documentation & Reproducibility**
 
+Model weights not included due to size. 
+You can download YOLOv8n/s from Ultralytics or train with train_yolov8_noflip.py.
+
+
 ---
 Author
 
